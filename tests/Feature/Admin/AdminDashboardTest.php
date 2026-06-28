@@ -3,7 +3,7 @@
 use App\Models\User;
 
 test('admin users can access the admin dashboard', function () {
-    $admin = User::factory()->create(['role' => 'admin']);
+    $admin = User::factory()->create()->assignRole('admin');
 
     $response = $this->actingAs($admin)->get(route('admin.dashboard'));
 
@@ -12,11 +12,19 @@ test('admin users can access the admin dashboard', function () {
 });
 
 test('customer users cannot access the admin dashboard', function () {
-    $customer = User::factory()->create(['role' => 'customer']);
+    $customer = User::factory()->create()->assignRole('customer');
 
     $response = $this->actingAs($customer)->get(route('admin.dashboard'));
 
     $response->assertStatus(403);
+});
+
+test('manager users can access the admin dashboard', function () {
+    $manager = User::factory()->create()->assignRole('manager');
+
+    $response = $this->actingAs($manager)->get(route('admin.dashboard'));
+
+    $response->assertStatus(200);
 });
 
 test('guests are redirected to login when accessing the admin dashboard', function () {

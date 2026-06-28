@@ -11,13 +11,16 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <p class="mb-2">{{ __("You're logged in!") }}</p>
                     <p class="text-sm text-gray-600 dark:text-gray-400">
-                        Role: <span class="font-semibold capitalize">{{ Auth::user()->role }}</span>
+                        Roles:
+                        <span class="font-semibold">
+                            {{ Auth::user()->roles->pluck('name')->implode(', ') }}
+                        </span>
                     </p>
-                    @if (Auth::user()->isAdmin())
+                    @can('view admin dashboard')
                         <a href="{{ route('admin.dashboard') }}" class="inline-block mt-4 text-indigo-600 dark:text-indigo-400 hover:underline">
                             Go to Admin Panel &rarr;
                         </a>
-                    @endif
+                    @endcan
                 </div>
             </div>
         </div>
