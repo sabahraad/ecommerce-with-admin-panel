@@ -36,7 +36,7 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                         @can('manage users')
-                                            <a href="{{ route('admin.users.roles.edit', $user) }}" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-900">Assign Roles</a>
+                                            <a href="{{ route('admin.users.roles.edit', $user) }}" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-900">Assign Roles</a>
                                         @endcan
                                     </td>
                                 </tr>

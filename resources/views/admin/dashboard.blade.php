@@ -34,6 +34,27 @@
                         <p class="mt-2 text-gray-600 dark:text-gray-400">Create and manage permissions.</p>
                     </a>
                 @endcan
+
+                @can('manage categories')
+                    <a href="{{ route('admin.categories.index') }}" class="block p-6 bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg hover:shadow-md transition">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Categories</h3>
+                        <p class="mt-2 text-gray-600 dark:text-gray-400">Manage product categories.</p>
+                    </a>
+                @endcan
+
+                @can('manage products')
+                    <a href="{{ route('admin.products.index') }}" class="block p-6 bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg hover:shadow-md transition">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Products</h3>
+                        <p class="mt-2 text-gray-600 dark:text-gray-400">Manage store products.</p>
+                    </a>
+                @endcan
+
+                @can('manage orders')
+                    <a href="{{ route('admin.orders.index') }}" class="block p-6 bg-white dark:bg-gray-800 shadow-sm sm:rounded-lg hover:shadow-md transition">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">Orders</h3>
+                        <p class="mt-2 text-gray-600 dark:text-gray-400">Manage customer orders.</p>
+                    </a>
+                @endcan
             </div>
         </div>
     </div>

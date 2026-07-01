@@ -18,7 +18,7 @@
                                 <label class="flex items-center space-x-3 p-3 border border-gray-200 dark:border-gray-700 rounded-lg cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-700">
                                     <input type="checkbox" name="roles[]" value="{{ $role->name }}"
                                         {{ $user->hasRole($role->name) ? 'checked' : '' }}
-                                        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500">
+                                        class="rounded border-gray-300 text-emerald-600 shadow-sm focus:ring-emerald-500">
                                     <span class="text-gray-900 dark:text-gray-100 capitalize">{{ $role->name }}</span>
                                 </label>
                             @endforeach

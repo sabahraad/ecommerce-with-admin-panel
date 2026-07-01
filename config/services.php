@@ -35,4 +35,15 @@ return [
         ],
     ],
 
+    'stripe' => [
+        'key' => env('STRIPE_PUBLISHABLE_KEY'),
+        'secret' => env('STRIPE_SECRET_KEY'),
+        'webhook_secret' => env('STRIPE_WEBHOOK_SECRET'),
+    ],
+
+    'storefront' => [
+        'data_source' => env('STOREFRONT_DATA_SOURCE', 'local'),
+        'api_base_url' => env('STOREFRONT_API_BASE_URL'),
+    ],
+
 ];

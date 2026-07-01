@@ -18,7 +18,7 @@
                     <div class="flex justify-between items-center mb-4">
                         <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">All Roles</h3>
                         @can('manage roles')
-                            <a href="{{ route('admin.roles.create') }}" class="inline-flex items-center px-4 py-2 bg-indigo-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-indigo-700">
+                            <a href="{{ route('admin.roles.create') }}" class="inline-flex items-center px-4 py-2 bg-emerald-600 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-emerald-700">
                                 Create Role
                             </a>
                         @endcan
@@ -41,8 +41,8 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                         @can('manage roles')
-                                            <a href="{{ route('admin.roles.permissions.edit', $role) }}" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-900 mr-3">Permissions</a>
-                                            <a href="{{ route('admin.roles.edit', $role) }}" class="text-indigo-600 dark:text-indigo-400 hover:text-indigo-900 mr-3">Edit</a>
+                                            <a href="{{ route('admin.roles.permissions.edit', $role) }}" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-900 mr-3">Permissions</a>
+                                            <a href="{{ route('admin.roles.edit', $role) }}" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-900 mr-3">Edit</a>
                                             <form method="POST" action="{{ route('admin.roles.destroy', $role) }}" class="inline">
                                                 @csrf
                                                 @method('DELETE')
